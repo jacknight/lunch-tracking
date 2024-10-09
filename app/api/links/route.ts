@@ -3,7 +3,6 @@ import { existsSync, readFileSync, writeFileSync } from 'fs';
 export const POST = async (req: Request) => {
 	try {
 		const json = await req.json();
-		console.info("Writing file: ", json);
 		writeFileSync('/tmp/links.json', JSON.stringify(json));
 		return new Response(JSON.stringify({success: true}));
 	}
@@ -14,9 +13,7 @@ export const POST = async (req: Request) => {
 
 export const GET = () => {
 	try {
-		console.info("Checking if exists...");
 		if (existsSync('/tmp/links.json')) {
-			console.info("Exists...");
 			const links = JSON.parse(readFileSync('/tmp/links.json', 'utf8'));
 			return new Response(JSON.stringify({success: true, links}));
 		}
