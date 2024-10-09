@@ -1,0 +1,26 @@
+{
+	"name": "Lunch Tracking",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "lunch-tracking",
+	"workspaceFolder": "/home/liquidnt/lunch-tracking",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"formulahendry.dotnet-test-explorer",
+				"mhutchie.git-graph",
+				"eamodio.gitlens",
+				"kangping.protobuf",
+				"semasquare.vscode-coverage-gutters",
+				"mikestead.dotenv",
+				"ms-dotnettools.csdevkit"
+			]
+		}
+	},
+	"runServices": [
+		"lunch-tracking"
+	],
+	"remoteUser": "liquidnt"
+}

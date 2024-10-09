@@ -1,0 +1,11 @@
+FROM nexus.tpicapcloud.com/fixedincome/oci/ubi8-nodejs18
+
+USER 0
+
+RUN mkdir -p /home/liquidnt/lunch-tracking
+
+COPY . /home/liquidnt/lunch-tracking
+
+WORKDIR /home/liquidnt/lunch-tracking
+
+CMD tail -f /dev/null

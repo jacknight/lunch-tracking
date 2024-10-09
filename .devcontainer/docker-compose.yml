@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  lunch-tracking:
+    image: nexus.tpicapcloud.com/fixedincome/lunch-tracking:master-devel
+    build:
+      context: ../
+      dockerfile: Dockerfile.devel
+    container_name: lunch-tracking
+    env_file:
+      - vars.env
+    volumes:
+      - ../:/home/liquidnt/lunch-tracking
+      - ${HOME}/.gitconfig:/home/liquidnt/.gitconfig
+      - ${HOME}/.ssh:/home/liquidnt/.ssh
+    ports:
+      - 192.168.5.115:3000:3000
