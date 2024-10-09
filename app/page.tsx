@@ -15,7 +15,7 @@ export const Home = async () => {
 export const getLinks = (async () => {
   try {
     console.info("Getting links...");
-    const res: {success: boolean, links: string[]} = await (await fetch(`${process.env.BASE_URL || "http://localhost:3000"}/api/links`, {cache: "no-store"})).json();
+    const res: {success: boolean, links: string[]} = await (await fetch(`${process.env.VERCEL_URL || "http://localhost:3000"}/api/links`, {cache: "no-store"})).json();
     if (res.success)
       return res.links;
     return [];
